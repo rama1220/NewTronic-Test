@@ -40,7 +40,7 @@ const AuthProvider = ({ children }) => {
 
   const getApi = async () => {
     try {
-      const response = await axios.get("http://103.183.75.112/api/directory/dataList");
+      const response = await axios.get("103.183.75.112/api/directory/dataList");
       return response.data;
     } catch (error) {
       console.log(error);
