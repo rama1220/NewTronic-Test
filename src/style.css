@@ -5,6 +5,11 @@
   font-family: "Merriweather", serif;
 }
 
+body {
+  background-color: #1a1d1e;
+  color: white;
+}
+
 /* Nvbar */
 header {
   width: 100vw;
@@ -150,7 +155,7 @@ li a {
   align-items: center;
   justify-content: end;
   text-align: left;
-  background-color: rgb(234, 244, 244);
+  background-color: #1a3333;
   border-radius: 20px 0 0 20px;
   margin-right: -1px;
   position: relative;
@@ -163,6 +168,7 @@ li a {
 }
 .quote svg {
   transform: rotateY(-200deg);
+  fill: white;
 }
 .desc-mobile {
   width: 80%;
@@ -230,15 +236,15 @@ footer {
   padding: 20px;
   color: white;
 }
-.ft-bar{
+.ft-bar {
   display: flex;
   align-items: center;
   gap: 40px;
 }
-span{
-  font-size: .7rem;
+span {
+  font-size: 0.7rem;
 }
-footer img{
+footer img {
   width: 130px;
 }
 .section {

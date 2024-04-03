@@ -14,11 +14,11 @@
     margin-bottom: 14px;
   }
   .quote {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translate(-50%, -50%);
-}
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+  }
   .burger {
     height: 100%;
     width: 10%;
@@ -125,7 +125,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: white;
+    background-color: #1a1d1e;
   }
 
   .quote svg {
