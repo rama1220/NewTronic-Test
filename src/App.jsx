@@ -5,7 +5,7 @@ function App() {
   const [data, setData] = useState([]);
    const [navActive, setNavactive] = useState(false);
    const [burger, setBurger] = useState(false);
-  const { getApi, firstVisible, secondVisible, thirdVisible, firstRef, secondRef, thirdRef, handleScroll } = useAuth();
+  const { getApi, firstVisible, secondVisible, thirdVisible, firstRef, secondRef, thirdRef, handleScroll, Scrollbar } = useAuth();
 
 
     const toggleNavActive = () => {
@@ -46,7 +46,7 @@ function App() {
     <>
       <header>
         <nav>
-          <div className="logo">
+          <div className="logo" onClick={Scrollbar}>
             <img src={logoSrc} alt="" />
           </div>
           <ul className={`nav-right ${navActive ? "nav-active" : ""}`}>

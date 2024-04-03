@@ -12,31 +12,34 @@ const AuthProvider = ({ children }) => {
   const [firstVisible, setFirstVisible] = useState(false);
   const [secondVisible, setSecondVisible] = useState(false);
   const [thirdVisible, setThirdVisible] = useState(false);
-    const firstRef = useRef(null);
-    const secondRef = useRef(null);
-    const thirdRef = useRef(null);
+  const firstRef = useRef(null);
+  const secondRef = useRef(null);
+  const thirdRef = useRef(null);
 
+  const handleScroll = () => {
+    const firstPositionFromTop = firstRef.current.getBoundingClientRect().top;
+    const secondPositionFromTop = secondRef.current.getBoundingClientRect().top;
+    const thirdPositionFromTop = thirdRef.current.getBoundingClientRect().top;
 
-     const handleScroll = () => {
-       const firstPositionFromTop = firstRef.current.getBoundingClientRect().top;
-       const secondPositionFromTop = secondRef.current.getBoundingClientRect().top;
-       const thirdPositionFromTop = thirdRef.current.getBoundingClientRect().top;
+    if (firstPositionFromTop - window.innerHeight < 0) {
+      setFirstVisible(true);
+    }
 
-       if (firstPositionFromTop - window.innerHeight < 0) {
-         setFirstVisible(true);
-       }
+    if (secondPositionFromTop - window.innerHeight < 0) {
+      setSecondVisible(true);
+    }
 
-       if (secondPositionFromTop - window.innerHeight < 0) {
-         setSecondVisible(true);
-       }
+    if (thirdPositionFromTop - window.innerHeight < 0) {
+      setThirdVisible(true);
+    }
+  };
 
-       if (thirdPositionFromTop - window.innerHeight < 0) {
-         setThirdVisible(true);
-       }
-     };
-
-
-
+  const Scrollbar = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   const getApi = async () => {
     try {
@@ -55,7 +58,8 @@ const AuthProvider = ({ children }) => {
     firstRef,
     secondRef,
     thirdRef,
-    handleScroll
+    handleScroll,
+    Scrollbar,
   };
 
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
